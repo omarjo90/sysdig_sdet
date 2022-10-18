@@ -34,6 +34,9 @@ spec:
 - Create one virtualenv in order to have all the required packages 
 > python -m venv venv
 
+- Activate the venv
+> .\venv\Scripts\activate
+
 - Install the required packages using requirements.txt file
 > pip install -r requirements.txt
 
