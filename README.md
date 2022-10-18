@@ -1,8 +1,8 @@
 ## Senior Software Developer in Test position @Sysdig
 
-little repo that contains the sysdyg technical interview code
+Little repo that contains the sysdyg technical interview code
 
-Minikube - Windows set up 
+- Minikube - Windows set up 
 
 >This link demonstrates how to set up minekube https://minikube.sigs.k8s.io/docs/start, follow the
 instructions until step 4, put attention in step 2 in case that minikube does not start correctly.
@@ -25,7 +25,7 @@ spec:
     - containerPort: 80
 ```
 
-- After creating the yaml file, execute the following command in order to install nginx 
+- After deploying the yaml file, execute the following command in order to deploy a POD 
 > kubectl apply -f .\your_file.yaml
 
 - The following output should be displayed:

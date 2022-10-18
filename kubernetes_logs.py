@@ -14,7 +14,7 @@ def kubernetes_logs(log_name='nginx', namespace='default'):
     v1 = client.CoreV1Api()
     print(f'Logs for POD: pod/{log_name} \n{v1.read_namespaced_pod_log(log_name, namespace)}\n')
     with open(f'{log_name}_file.txt', 'a') as o:
-        o.write(f'Logs for POD: pod/nginx \n{v1.read_namespaced_pod_log("nginx", "default")}\n')
+        o.write(f'Logs for POD: pod/{log_name} \n{v1.read_namespaced_pod_log(log_name, namespace)}\n')
 
 
 # This method return the list of available pods and its IP, namespace and name
@@ -26,6 +26,7 @@ def list_pods_with_ips():
     for i in pod.items:
         print(f'ip: {i.status.pod_ip}, namespace: {i.metadata.namespace}, name: {i.metadata.name}')
 
+
 kubernetes_logs()
-#kubernetes_logs('etcd-minikube', 'kube-system,')
+kubernetes_logs('etcd-minikube', 'kube-system')
 list_pods_with_ips()
