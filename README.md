@@ -7,7 +7,7 @@ Minikube - Windows set up
 >This link demonstrates how to set up minekube https://minikube.sigs.k8s.io/docs/start, follow the
 instructions until step 4, put attention in step 2 in case that minikube does not start correctly.
 
-Create a .yaml file with the following values:
+- Create a .yaml file with the following values:
 
 ```
 apiVersion: v1
@@ -25,23 +25,23 @@ spec:
     - containerPort: 80
 ```
 
-After creating the yaml file, execute the following command in order to install nginx 
->> kubectl apply -f .\your_file.yaml
+- After creating the yaml file, execute the following command in order to install nginx 
+> kubectl apply -f .\your_file.yaml
 
-The following output should be displayed:
->> pod/nginx created
+- The following output should be displayed:
+> pod/nginx created
 
-Create one virtualenv in order to have all the required packages 
->> python -m venv venv
+- Create one virtualenv in order to have all the required packages 
+> python -m venv venv
 
-Install the required packages using requirements.txt file
->> pip install -r requirements.txt
+- Install the required packages using requirements.txt file
+> pip install -r requirements.txt
 
-Execute the script in order to obtain the logs
->> python kubernetes_logs.py
+- Execute the script in order to obtain the logs
+> python kubernetes_logs.py
 
 
-This is the expected output if the script:
+- This is the expected output if the script:
 ```
 Logs for POD: pod/nginx
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
@@ -83,7 +83,7 @@ ip: 192.168.49.2, namespace: kube-system, name: kube-scheduler-minikube
 ip: 192.168.49.2, namespace: kube-system, name: storage-provisioner
 ```
 
-and a file called {pod_name}_file.txt is created in the folder where the script is executed
+- Finally, a file called {pod_name}_file.txt is created in the folder where the script is executed
 
 
 
