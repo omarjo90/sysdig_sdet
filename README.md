@@ -25,7 +25,7 @@ spec:
     - containerPort: 80
 ```
 
-- After deploying the yaml file, execute the following command in order to deploy a POD 
+- After creating the yaml file, execute the following command in order to deploy a POD 
 > kubectl apply -f .\your_file.yaml
 
 - The following output should be displayed:
