@@ -13,7 +13,7 @@ def kubernetes_logs(log_name='nginx', namespace='default'):
     config.load_kube_config()
     v1 = client.CoreV1Api()
     print(f'Logs for POD: pod/{log_name} \n{v1.read_namespaced_pod_log(log_name, namespace)}\n')
-    with open(f'{log_name}_file.txt', 'a') as o:
+    with open(f'{log_name}_file.txt', 'w') as o:
         o.write(f'Logs for POD: pod/{log_name} \n{v1.read_namespaced_pod_log(log_name, namespace)}\n')
 
 
