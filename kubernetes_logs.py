@@ -27,6 +27,9 @@ def list_pods_with_ips():
         print(f'ip: {i.status.pod_ip}, namespace: {i.metadata.namespace}, name: {i.metadata.name}')
 
 
-kubernetes_logs()
-kubernetes_logs('etcd-minikube', 'kube-system')
-list_pods_with_ips()
+if __name__ == "__main__":
+    log_name = 'etcd-minikube'
+    namespace = 'kube-system'
+    kubernetes_logs()
+    kubernetes_logs(log_name, namespace)
+    list_pods_with_ips()
