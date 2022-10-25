@@ -62,6 +62,7 @@ spec:
 >5. One python virtual environment is created and activated to isolate where the script is going to be executed
 >6. Required python packages are installed
 >7. Finally, the terminal asks for log name and namespace of the log that will be displayed
+> Try: etcd-minikube for log name and then kube-system for namespace of the pod
 >8. Results are displayed
 
 
