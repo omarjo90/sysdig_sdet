@@ -16,7 +16,8 @@ Little repo that contains the sysdyg technical interview code
    2. is it needed to comment the methods created?
    3. if params are needed, is ok to be hardcode, or it required to obtain the log names from the shell or terminal
 
-- Create a .yaml file with the following values:
+## Start the execution
+### Create a .yaml file with the following values:
 
 ```
 apiVersion: v1
@@ -34,14 +35,13 @@ spec:
     - containerPort: 80
 ```
 
-
 - Minikube set up 
   - Pre-requisites
     - Docker should be installed and running
     - venv python package installed
     - kubectl installed
     - pip3 installed
-    - installer_script tested on:
+    - installer_script.sh tested on:
       - NAME="Linux Mint"
       - VERSION="21 (Vanessa)"
       - ID=linuxmint
@@ -53,7 +53,7 @@ spec:
 - Execute the file 'installer_script.sh' as follows:
 > source installer_script.sh
 
-- Description of the processes executed in installer_script.sh
+### Description of the processes executed in installer_script.sh
 
 >1. First the script downloads minikube for linux
 >2. Then the file downloaded is installed
