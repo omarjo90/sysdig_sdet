@@ -2,10 +2,19 @@
 
 Little repo that contains the sysdyg technical interview code
 
-- Minikube - Windows set up 
+- Possible improvements if more time was available
 
->This link demonstrates how to set up minekube https://minikube.sigs.k8s.io/docs/start, follow the
-instructions until step 4, put attention in step 2 in case that minikube does not start correctly.
+1. It will be nice to add the script to a CI/CD tool and check logs
+2. From CI/CD, explain how to set up and execute it
+3. Add a possible list of libraries to try for the challenge.
+4. Scope if it is required use libraries or shell commands to obtain results
+5. Use python and send shell commands is also something interesting to try.
+6. Add to the code exceptions to return meaningful error messages
+7. Add a scope about the environment set up. If this needs to be automated as well as part of the challenge.   
+8. Explain with more details what would be a good script or a bad script
+   1. is it needed to received params?
+   2. is it needed to comment the methods created?
+   3. if params are needed, is ok to be hardcode, or it required to obtain the log names from the shell or terminal
 
 - Create a .yaml file with the following values:
 
@@ -25,26 +34,39 @@ spec:
     - containerPort: 80
 ```
 
-- After creating the yaml file, execute the following command in order to deploy a POD 
-> kubectl apply -f .\your_file.yaml
 
-- The following output should be displayed:
-> pod/nginx created
-
-- Create one virtualenv in order to have all the required packages 
-> python -m venv venv
-
-- Activate the venv
-> .\venv\Scripts\activate
-
-- Install the required packages using requirements.txt file
-> pip install -r requirements.txt
-
-- Execute the script in order to obtain the logs
-> python kubernetes_logs.py
+- Minikube set up 
+  - Pre-requisites
+    - Docker should be installed and running
+    - venv python package installed
+    - kubectl installed
+    - pip3 installed
+    - installer_script tested on:
+      - NAME="Linux Mint"
+      - VERSION="21 (Vanessa)"
+      - ID=linuxmint
+      - ID_LIKE="ubuntu debian"
+      - PRETTY_NAME="Linux Mint 21"
 
 
-- This is the expected output if the script:
+- Make sure that file 'nginx.yaml' is located in the same path as 'installer_script.sh'    
+- Execute the file 'installer_script.sh' as follows:
+> source installer_script.sh
+
+- Description of the processes executed in installer_script.sh
+
+>1. First the script downloads minikube for linux
+>2. Then the file downloaded is installed
+>3. Then minikube service is started
+>4. After that, nginx pod is deployed to minikube
+>5. One python virtual environment is created and activated to isolate where the script is going to be executed
+>6. Required python packages are installed
+>7. Finally, the terminal asks for log name and namespace of the log that will be displayed
+>8. Results are displayed
+
+
+
+- This is the expected output of the script:
 ```
 Logs for POD: pod/nginx
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration

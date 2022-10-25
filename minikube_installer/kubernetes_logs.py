@@ -28,8 +28,8 @@ def list_pods_with_ips():
 
 
 if __name__ == "__main__":
-    log_name = 'etcd-minikube'
-    namespace = 'kube-system'
+    log_name = input('Enter log name: ')
+    namespace = input('Enter namespace of the pod: ')
     kubernetes_logs()
     kubernetes_logs(log_name, namespace)
     list_pods_with_ips()
